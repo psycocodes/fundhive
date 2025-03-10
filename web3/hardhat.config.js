@@ -39,6 +39,20 @@ module.exports = {
   },
   solidity: {
     version: "0.8.23",
+    defaultNetwork: 'testnet',
+    networks: {
+      hardhat: {},
+      testnet: {
+        url: "https://api.avax-test.network/ext/bc/C/rpc",
+        accounts: [process.env.PRIVATE_KEY],
+        chainId: 43113
+      },
+      sepolia: {
+        url: "https://rpc.sepolia.org",
+        accounts: [process.env.PRIVATE_KEY],
+        chainId: 11155111,
+      },
+    },
     settings: {
       optimizer: {
         enabled: true,
